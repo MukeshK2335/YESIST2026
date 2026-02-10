@@ -37,7 +37,7 @@ const footerHTML = `
         </div>
     </div>
     <div class="footer-bottom">
-        <p>Copyright &copy; <span id="copyright-year">2025</span> IEEE YESIST12. All rights reserved.</p>
+        <p>Copyright &copy; <span id="copyright-year">2026</span> IEEE YESIST12. All rights reserved.</p>
     </div>
 </footer>
 

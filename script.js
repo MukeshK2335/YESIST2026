@@ -288,4 +288,40 @@ if (achieverTabs.length > 0 && trackAchievers.length > 0) {
             slides[currentSlide].classList.add('active');
         }, slideInterval);
     }
+
+    // --- Stats Counter Animation ---
+    const statsSection = document.querySelector('#impact-stats');
+    const counters = document.querySelectorAll('.counter');
+    let hasAnimated = false;
+
+    if (statsSection && counters.length > 0) {
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const speed = 50; // The lower value, the faster the counter (fewer steps)
+                const increment = target / speed;
+
+                const updateCount = () => {
+                    const count = +counter.innerText.replace(/,/g, ''); // Remove commas if any
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 20); // Adjust for smoothness
+                    } else {
+                        counter.innerText = target.toLocaleString(); // Add commas back for final number
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !hasAnimated) {
+                animateCounters();
+                hasAnimated = true; // Ensure it runs only once
+            }
+        }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+
+        observer.observe(statsSection);
+    }
 });

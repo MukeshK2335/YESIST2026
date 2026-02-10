@@ -1614,11 +1614,9 @@ header .dropdown li a,
 }
 
 .footer-logo img {
-    height: 50px;
-    background-color: var(--white-color);
-    padding: 10px;
-    border-radius: 5px;
+    height: 75px;
     margin-bottom: 15px;
+    display: inline-block;
 }
 
 .footer-logo p {
@@ -2877,8 +2875,14 @@ main {
         text-align: center;
     }
 
+    .about-row {
+        margin-left: 0;
+        gap: 30px;
+    }
+
     .about-text {
-        text-align: center; /* Optional: if they want body text centered too, but usually titles are enough. User said "section title". Let's stick to titles first. */
+        text-align: center;
+        padding: 0 15px;
     }
     
     /* Ensure full width for proper centering context */
@@ -2889,13 +2893,26 @@ main {
     }
     
     .about-text p {
-        padding-right: 0; /* Remove the padding we added for desktop */
-        text-align: justify; /* Justify text as requested */
+        padding-right: 0;
+        text-align: justify;
     }
 
     .image-gallery {
-        margin: 0 auto; /* Center the gallery on mobile */
+        margin: 40px auto 0;
+        height: 400px; /* Reduce height for mobile */
+        max-width: 100%;
+        transform: scale(0.9); /* Slightly scale down to fit better */
     }
+
+    .gallery-image {
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    /* Adjust specific image sizes for mobile if needed */
+    .top-image { height: 200px; }
+    .left-image { height: 180px; top: 140px; }
+    .right-image { height: 190px; top: 80px; }
+    .bottom-image { height: 160px; }
 
     /* Support Innovators Responsive */
     #support-innovators {
