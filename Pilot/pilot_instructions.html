@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pilot Instructions</title>
+     <link rel="icon" type="image/png" href="../images/IEEE-YESIST12-Logo-1024x307-1.png">
+    <link rel="stylesheet" href="../style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+/* ---------------- General Styles ---------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+
+html,body {
+    font-family: "Montserrat";
+
+  margin: 0;
+  padding: 0;
+   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+ 
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------------- Pilot Hero Section ---------------- */
+.pilot-hero {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  color: #ffffff;
+  background-image: url("../images/HeaderBG.jpg"); /* Fixed path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.pilot-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 0;
+  transition: background 0.5s ease;
+}
+
+.pilot-hero:hover::before {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.pilot-hero .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pilot-hero .title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff; /* Explicitly set to white */
+  transition: transform 0.5s ease, color 0.5s ease;
+}
+
+.pilot-hero .title:hover {
+  transform: scale(1.05);
+  color: #2bb884;
+}
+
+.pilot-hero .hero-subtext {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pilot-hero .breadcrumb {
+  list-style: none;
+  padding: 0;
+  display: inline-flex;
+  gap: 5px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.pilot-hero .breadcrumb li a {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.pilot-hero .breadcrumb li a:hover {
+  color: #2bb884;
+}
+
+.pilot-hero .breadcrumb li i {
+  font-size: 0.8rem;
+}
+
+/* ---------------- Scroll Animations ---------------- */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease-out;
+}
+
+.scroll-animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional delays (can add delay-1, delay-2, delay-3 in HTML) */
+.delay-1 {
+  transition-delay: 0.2s;
+}
+
+.delay-2 {
+  transition-delay: 0.4s;
+}
+
+.delay-3 {
+  transition-delay: 0.6s;
+}
+
+/* ---------------- Main Content ---------------- */
+main {
+  padding: 20px;
+}    
+ 
+/* Section container like Elementor */
+.project-section,.pro{
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px 30px;
+}
+
+/* Main Heading like Elementor Heading Widget */
+.main-heading {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 40px;
+  text-align: left;
+  color: #0A4360;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.5s ease-out;
+}
+
+/* Flex container for image + text */
+.project-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Left column image (small) */
+.left-column {
+  flex: 0 0 400px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-out;
+}
+
+.left-column img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Right column text */
+.right-column {
+  flex: 1;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-out;
+}
+
+.right-column h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #0A4360;
+
+}
+
+.right-column p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* Scroll animation class */
+.in-view {
+  opacity: 1 !important;
+  transform: translate(0,0) !important;
+}
+
+
+
+.pilots-sections {
+  max-width: 1000px;
+  margin-left: 150px;
+}
+
+/* Each section container */
+.pilot-section {
+  margin-left: 0;
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-out;
+}
+
+/* Heading styling like Elementor */
+.pilot-section h4 {
+  font-size: 22px;
+  font-weight: 550;
+  margin-bottom: 10px;
+  color: #0A4360;
+}
+
+/* Paragraphs */
+.pilot-section p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+/* Lists */
+.pilot-section ul, .pilot-section ol {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+/* Bold text inside paragraphs */
+.pilot-section strong {
+  font-weight: 600;
+}
+
+/* Scroll animation */
+.in-view {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+ 
+
+.button-section {
+    padding: 10px;
+    text-align: center;
+}
+
+.pilot-button {
+    display: inline-block;
+    padding: 12px 24px;
+background: linear-gradient(220deg, #0A4360 0%, #2BB884 100%);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+        border:2px solid white;
+
+    transition: background-color 0.4s ease, transform 0.2s ease;
+}
+
+.pilot-button:hover {
+    background: #0A4360;
+    transform: scale(1.07);
+}
+
+/* ---------------- Responsive Styles ---------------- */
+@media (max-width: 1024px) {
+    /* Stack project content vertically */
+    .project-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Adjust left column image width */
+    .left-column {
+        flex: 1 1 100%;
+    }
+
+    /* Adjust right column text width */
+    .right-column {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Reduce hero padding */
+    .pilot-hero {
+        padding: 60px 15px;
+    }
+
+    /* Scale hero title */
+    .pilot-hero .title {
+        font-size: 2rem;
+    }
+
+    /* Breadcrumb font size */
+    .pilot-hero .breadcrumb li {
+        font-size: 0.9rem;
+    }
+
+    /* Hero subtitle smaller */
+    .pilot-hero .hero-subtext {
+        font-size: 1rem;
+    }
+
+    /* Pilot button responsive */
+    .pilot-button {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+
+    /* Reduce project section margins */
+    .project-section, .pilots-sections {
+        padding: 15px 20px;
+        margin: 30px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Stack breadcrumbs vertically */
+    .pilot-hero .breadcrumb {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    /* Hero title even smaller */
+    .pilot-hero .title {
+        font-size: 1.6rem;
+    }
+
+    /* Button full width on mobile */
+    .pilot-button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+    }
+}
+
+    </style>
+  </head>
+
+  <body>
+    <!-- pilot-hero section -->
+<section class="pilot-hero become-sponsor-hero">
+  <div class="container">
+    <!-- Main Title -->
+    <h1 class="title scroll-animate animate-up delay-1">Pilot Instructions</h1>
+
+    <!-- Breadcrumb navigation -->
+    <ul class="breadcrumb">
+      <li class="scroll-animate animate-up delay-1">
+        <a href="../index.html">Home</a>
+      </li>
+      <li class="scroll-animate animate-up delay-2">
+        <i class="fas fa-chevron-right"></i>
+      </li>
+      <li class="scroll-animate animate-up delay-3">Pilot Instructions</li>
+    </ul>
+
+    <!-- Hero subtitle -->
+    <p class="hero-subtext scroll-animate animate-up delay-2">
+      Follow these pilot instructions carefully to ensure safety and compliance during your flight operations.
+    </p>
+  </div>
+</section>
+
+
+<section class="project-section">
+  <!-- Main Heading -->
+  <h2 class="main-heading scroll-animate delay-0">
+    Overall Flow for the Project Submission under Pilots Entry IEEE YESIST12 (2026)
+  </h2>
+
+  <div class="project-content">
+    <!-- Left Column: Small Image -->
+    <div class="left-column scroll-animate delay-1">
+      <img src="https://ieeeyesist12.org/wp-content/uploads/2025/01/Screenshot-2025-01-12-113901-1.png" 
+           alt="Project Flow Diagram">
+    </div>
+
+    <!-- Right Column: Text -->
+    <div class="right-column scroll-animate delay-2">
+      <h3>About Pilots</h3>
+      <p>
+        The Pilots program in IEEE YESIST12 plays a crucial role in driving regional outreach and participation. 
+        Pilots serve as international representatives of IEEE, working to inspire innovation and offer opportunities 
+        for participants to present their pioneering ideas. This initiative aims to build a vibrant, interconnected 
+        community that encourages creativity, teamwork, and the development of practical solutions for real-world problems.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="pilots-sections">
+
+  <!-- Section 1 -->
+  <div class="pilot-section scroll-animate delay-1">
+    <h4>1. Call for Pilots</h4>
+    <p><strong>Call for Pilots Period: 09 December 2025 – 20 December 2025</strong></p>
+    <p>
+      Call for Pilots is an open invitation to IEEE members, sections, student branches, universities, 
+      and industry collaborators to apply to serve as regional Pilots for IEEE YESIST12, hosting and coordinating 
+      the prelims in their locality while acting as official ambassadors of the program. The objective is to 
+      recruit motivated organizers from IEEE entities worldwide who can represent their regions, promote YESIST12, 
+      and enable local teams to participate in the global innovation platform.
+    </p>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="pilot-section scroll-animate delay-1">
+    <h4>2. Pilot Selection</h4>
+    <p><strong>Eligibility to be a Pilot:</strong></p>
+    <ol>
+      <li>Eligible applicants typically include IEEE Sections, Subsections, Student Branches, Affinity Groups, universities, colleges, and committed IEEE volunteers or professionals who can secure institutional support and conduct a structured prelim event.</li>
+      <li>Pilots are expected to demonstrate the capacity to engage multiple student teams, follow YESIST12 guidelines, coordinate with the central organizing team, and uphold IEEE’s values of innovation, professionalism, and social impact.</li>
+    </ol>
+    <p><strong>Selection Process:</strong></p>
+    <ol>
+      <li>Pilots are shortlisted by the IEEE YESIST12 Committee based on the Expressions of Interest submitted.</li>
+      <li>The evaluation considers factors such as the applicant’s promotional reach, prior experience in organizing events, and demonstrated ability to attract and engage participants.</li>
+    </ol>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="pilot-section scroll-animate delay-1">
+    <h4>3. Announcement of Selected Pilots</h4>
+    <p><strong>Notification of Selected Pilots: 30 December 2025</strong></p>
+    <p><strong>Notification</strong>: Selected Pilots will receive an official confirmation email from the IEEE YESIST12 organizing team, informing them of their selection and outlining the next steps and timelines. After receiving this email, each Pilot must formally acknowledge and confirm their willingness to take up the role within the specified deadline.</p>
+    <p><strong>Responsibilities Post-Selection:</strong></p>
+    <ul>
+      <li>Once confirmed, Pilots are expected to promptly begin awareness and publicity activities for IEEE YESIST12 within their institution, section, or region, using channels such as social media, emails, and local events.</li>
+      <li>They should also start planning and scheduling regional promotions, information sessions, and project submission drives to attract teams, guide them on the tracks and guidelines, and ensure strong participation from their region.</li>
+    </ul>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="pilot-section scroll-animate delay-1">
+    <h4>4. Orientation for Selected Pilots</h4>
+    <p><strong>Pilot Orientation Sessions: 03 January 2026 &amp; 04 January 2026</strong></p>
+    <p>An orientation session will be organized for all selected Pilots to guide them through the IEEE YESIST12 structure, processes, expectations, and key deliverables. This session is intended for Pilots who have already aligned their internal timelines with the overall YESIST12 roadmap, which will be shared in advance of the call for Pilots.</p>
+    <p><strong>The orientation will be conducted virtually and will:</strong></p>
+    <ul>
+      <li>Walk Pilots through the roadmap for conducting preliminary rounds and managing project submissions.</li>
+      <li>Share standard promotional materials, communication guidelines, and templates to ensure consistent branding and messaging.</li>
+      <li>Provide a forum to clarify roles, resolve doubts, and address any queries Pilots may have before launching their regional activities.</li>
+    </ul>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="pilot-section scroll-animate delay-1">
+    <h4>5. Promotion and Project Submission</h4>
+    <p><strong>Pilot Publicity Window: 05 January 2026 – 05 March 2026</strong></p>
+    <p><strong>Responsibility of Pilots</strong>:</p>
+    <ul>
+      <li>Actively promote IEEE YESIST12 within their respective regions as per the overall program timeline.</li>
+      <li>Facilitate, guide, and oversee project submissions from interested participants.</li>
+      <li>Ensure that all project submissions are collected within the submission window specified in the YESIST12 roadmap.</li>
+    </ul>
+    <p><strong>Resources Provided:</strong></p>
+    <ul>
+      <li>Official promotional templates, communication guidelines, and sample content.</li>
+      <li>Access to IEEE YESIST12 branding materials for consistent visual identity.</li>
+      <li>Technical support channels for managing and troubleshooting submission-related issues.</li>
+    </ul>
+    <p><strong>Note</strong>: An initial level of scrutiny will be carried out by the YESIST12 team, and only shortlisted projects will be eligible to enter the prelims.</p>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="pilot-section scroll-animate delay-1">
+    <h4>6. Project Selection for Grand Finale</h4>
+    <p><strong>Pilot Prelims Period: End of March 2026 (exact date to be announced)</strong></p>
+    <p><strong>Preliminary Round</strong>:</p>
+    <ul>
+      <li>Pilots must conduct preliminary rounds in their regions within the uniform time window defined in the YESIST12 timeline.</li>
+      <li>All selected Pilots will run prelims during this common period to ensure consistency across regions.</li>
+      <li>Projects will be evaluated by an independent jury appointed by the IEEE YESIST12 team.</li>
+      <li>Only project ideas shortlisted by the IEEE YESIST12 team will be allowed to participate in the preliminary round.</li>
+      <li>Pilots must ensure transparency, impartiality, and fairness throughout the evaluation process.</li>
+    </ul>
+    <p><strong>Submission to IEEE YESIST12 Jury</strong>:</p>
+    <ul>
+      <li>Final shortlisted projects from the prelims will be submitted to the central IEEE YESIST12 jury for consideration for the Grand Finale.</li>
+      <li>IEEE YESIST12 reserves the right to recognize and select additional projects beyond the declared top entries if they are considered exceptional or of high impact.</li>
+    </ul>
+  </div>
+<div class="pilot-section scroll-animate delay-1">
+    <h4>7. Pilot-Level Results and Finale Participation</h4>
+    <p><strong>Results Announcement:</strong></p>
+    <p>Pilots may announce the results of their preliminary rounds once evaluations are completed within their respective institutions, organizations, or regions.</p>
+    <p><strong>Recognition at Pilot Level:</strong></p>
+    <ul>
+      <li>Pilots are encouraged to recognize and celebrate top-performing projects at their level through certificates, awards, or special mentions.</li>
+      <li>These top projects, along with any additional teams identified by the IEEE YESIST12 committee, will be shortlisted for participation in the Grand Finale, as specified in the official YESIST12 timeline and venue guidelines.</li>
+      <li>IEEE YESIST12 reserves the right to directly invite any outstanding projects to the finale, irrespective of their local ranking.</li>
+    </ul>
+  </div>
+
+  <!-- Section 8 -->
+  <div class="pilot-section scroll-animate delay-1">
+    <h4>8. Post-Prelims Process for Pilots</h4>
+    <p><strong>Post-Prelims Reporting Deadline: Within 10 days after prelims<br>
+    Hard deadline: First week of April 2026</strong></p>
+    <p>After completing the preliminary rounds, all Pilots must follow the standardized post-prelims reporting process to ensure smooth documentation, evaluation, and progression to the Grand Finale.</p>
+    <p><strong>Required Submissions by Pilots:</strong></p>
+    <ul>
+      <li><strong>Prelims Report:</strong> A structured report summarizing the planning, execution, number of teams involved, judging process, and outcomes.</li>
+      <li>Event Photographs & Media: High-quality photos, short video clips, and other media documenting the prelim event</li>
+      <li>Participant & Jury Details: A consolidated list of participating teams, shortlisted projects, and details of the jury members.</li>
+      <li>Final Shortlisted Projects: Submit the prelim-level shortlisted projects to the central IEEE YESIST12 jury as per the official submission protocol.</li>
+      <li>Compliance Check: Ensure that all prelim rounds were conducted within the designated YESIST12 timeline and in alignment with the provided guidelines.</li>
+    </ul>
+    <p><strong>Purpose of Post-Prelims Documentation:</strong></p>
+    <ul>
+      <li>These submissions help the IEEE YESIST12 committee maintain transparency, assess regional participation, validate the prelim processes, and facilitate the progression of qualified teams to the Grand Finale.</li>
+    </ul>
+  </div>
+
+  <!-- Section 9 -->
+  <div class="pilot-section scroll-animate delay-1">
+    <h4>9. Pilot Awards (IEEE YESIST12 Pilot Honors)</h4>
+    <p>Pilot Awards are special recognitions given to outstanding Pilots for their exceptional execution, engagement, and contribution to the YESIST12 mission.</p>
+    <p>These honors celebrate Pilots who demonstrate exemplary efforts such as impactful outreach, well-organized prelims, strong participant engagement, and meaningful support to shortlisted teams.</p>
+    <p>To know more about Pilot Awards, recognition criteria, and the honor categories, please visit the official <a href="https://ieeeyesist12.org/pilot-awards/">Pilot Awards page</a> on the YESIST12 website.</p>
+  </div>
+
+  <!-- Timeline Section -->
+  <div class="pilot-section scroll-animate delay-1">
+    <h4>IEEE YESIST12 2026 Pilot Process Timeline</h4>
+    <p><strong>List of Action & Dates</strong></p>
+    <ul>
+      <li><strong>Call for Pilots - </strong> 06/12/2025 - 20/12/2025</li>
+      <li><strong>Emailing Selected Pilots - </strong> 30/12/2025</li>
+      <li><strong>Pilot Orientation Program - </strong> 03/01/2026 & 04/01/2026</li>
+      <li><strong>Pilot Portal Credentials - </strong> 03/01/2026</li>
+      <li><strong>Pilot Publicity - </strong> 05/01/2026 - 05/03/2026</li>
+      <li><strong>Pilot Prelims - </strong> End of March 2026 (Exact date to be announced)</li>
+      <li><strong>Post-Prelims Process - </strong> Within 10 days after prelims (Hard deadline: first week of April 2026)</li>
+    </ul>
+  </div>
+
+</section>
+
+
+    <section class="button-section">
+        <a href="https://yesist12.org/call-for-pilots-2026" target="_blank" class="pilot-button">
+            Click Here to Apply for Pilot 2026 Registration
+        </a>
+    </section>
+
+    <!-- Scripts -->
+    <script src="../components/header.js"></script>
+    <script src="../components/footer.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

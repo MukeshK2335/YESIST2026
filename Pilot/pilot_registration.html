@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pilot Registration</title>
+     <link rel="icon" type="image/png" href="../images/IEEE-YESIST12-Logo-1024x307-1.png">
+    <link rel="stylesheet" href="../style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+/* ---------------- General Styles ---------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+html,body {
+  margin: 0;
+  padding: 0;
+   overflow-x: hidden;
+  scroll-behavior: smooth;
+    font-family: "Montserrat";
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------------- Registration Hero Section ---------------- */
+.registration-hero {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  color: #ffffff;
+  background-image: url("../images/HeaderBG.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.registration-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+  transition: background 0.5s ease;
+}
+
+.registration-hero:hover::before {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.registration-hero .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.registration-hero .title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff; /* Explicitly set to white */
+  transition: transform 0.5s ease, color 0.5s ease;
+}
+
+.registration-hero .title:hover {
+  transform: scale(1.05);
+  color: #2bb884;
+}
+
+.registration-hero .hero-subtext {
+  font-size: 1.1rem;
+}
+
+.registration-hero .breadcrumb {
+  list-style: none;
+  padding: 0;
+  display: inline-flex;
+  gap: 5px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.registration-hero .breadcrumb li a {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.registration-hero .breadcrumb li a:hover {
+  color: #2bb884;
+}
+
+.registration-hero .breadcrumb li i {
+  font-size: 0.8rem;
+}
+
+/* ---------------- Scroll Animations ---------------- */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional delays (can add delay-1, delay-2, delay-3 in HTML) */
+.delay-1 {
+  transition-delay: 0.2s;
+}
+
+.delay-2 {
+  transition-delay: 0.4s;
+}
+
+.delay-3 {
+  transition-delay: 0.6s;
+}
+
+/* ---------------- Main Content ---------------- */
+main {
+  padding: 20px;
+} 
+/* Container and General */
+.pilot-guide-section {
+  position: relative;
+  padding: 50px 20px;
+  color: #333;
+  overflow: hidden;
+}
+
+.pilot-guide-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/bg.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.pilot-guide-section .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.8);
+}
+
+/* Headings */
+.section-subtitle {
+  text-align: left;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2BB884;
+  margin-bottom: 20px;
+}
+
+.column-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #2BB884;
+  margin-bottom: 10px;
+}
+
+/* Paragraphs */
+.section-intro, .column p, .section-end {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Columns */
+.pilot-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.pilot-columns .column {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Video */
+.video-wrapper iframe {
+  width: 100%;
+  border-radius: 8px;
+  height: 100%;
+  min-height: 220px;
+}
+
+/* Steps List with Tick */
+.steps-list {
+  list-style: none;
+  padding-left: 0;
+  line-height: 2;
+}
+
+.steps-list li {
+  position: relative;
+  margin-bottom: 15px;
+  padding-left: 35px;
+}
+
+.steps-list li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  background: linear-gradient(to right, #0A4360, #2BB884);
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  line-height: 25px;
+  font-weight: bold;
+}
+
+.steps-list li ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.steps-list li ul li::before {
+  content: none; /* Remove tick for nested list */
+}
+
+.steps-list .action-points {
+  list-style: none;
+  margin: 12px 0 8px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.steps-list .action-points li {
+  margin: 0;
+  padding: 10px 14px 10px 40px;
+  line-height: 1.5;
+  border-left: 4px solid #2BB884;
+  border-radius: 8px;
+  background: #f4fbf8;
+}
+
+.steps-list .action-points li::before {
+  content: "\f058";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  width: auto;
+  height: auto;
+  line-height: 1;
+  color: #2BB884;
+  background: none;
+}
+
+.point-label {
+  font-weight: 700;
+  color: #0A4360;
+}
+
+/* Spacer */
+.spacer {
+  height: 30px;
+}
+
+/* ---------------- Scroll Animations ---------------- */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional delays */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+.delay-4 { transition-delay: 0.8s; }
+.delay-5 { transition-delay: 1s; }
+
+/* Responsive */
+@media(max-width: 768px) {
+  .pilot-columns {
+    flex-direction: column;
+  }
+}
+
+    </style>
+  </head>
+
+  <body>
+
+
+<section class="registration-hero">
+  <div class="container">
+    <!-- Main Title -->
+    <h1 class="title scroll-animate animate-up delay-1">Pilot Registration</h1>
+
+    <!-- Breadcrumb navigation -->
+    <ul class="breadcrumb">
+      <li class="scroll-animate animate-up delay-1">
+        <a href="../index.html">Home</a>
+      </li>
+      <li class="scroll-animate animate-up delay-1">
+        <i class="fas fa-chevron-right"></i>
+      </li>
+      <li class="scroll-animate animate-up delay-1">Pilot Registration</li>
+    </ul>
+
+    <!-- Hero subtitle -->
+    <p class="hero-subtext scroll-animate animate-up delay-1">
+      Register as a pilot and join our community to participate in upcoming events and programs.
+    </p>
+  </div>
+</section>
+
+
+
+
+<section class="pilot-guide-section">
+  <div class="container scroll-animate delay-1">
+    <!-- Heading -->
+    <h3 class="section-subtitle">Become a Catalyst of Innovation – Be a YESIST12 Pilot!</h3>
+
+    <!-- Intro Paragraph -->
+    <p class="section-intro">
+      Do you have a passion for driving innovation and nurturing young talents? Here’s your chance to be a crucial part of IEEE YESIST12, a global platform for student innovation. As a Pilot, you play a pivotal role in conducting the preliminary round of this esteemed competition.
+    </p>
+
+    <!-- Two-column Section -->
+    <div class="pilot-columns">
+      <div class="column scroll-animate delay-1">
+        <h3 class="column-title">Who can be the Pilot?</h3>
+        <p>Pilots are selected worldwide to host the preliminary round of IEEE YESIST12. We welcome individuals, IEEE members, sections, universities, and industry enthusiasts who are eager to contribute to fostering innovation.</p>
+      </div>
+      <div class="column scroll-animate delay-1">
+        <div class="video-wrapper">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/g8ZDHV3jHnc" title="IEEE YESIST12 Pilot Training 2023" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- Steps List -->
+    <p><strong>As potential pilots for IEEE YESIST12, here’s a concise guide outlining the crucial steps for a successful engagement:</strong></p>
+
+    <ul class="steps-list scroll-animate delay-1">
+      <li>Step 1: Kickstart the Pilot process by registering your interest <a href="https://ieeeyesist12.org/pilot-registration"><strong><em>here</em></strong></a>.</li>
+      <li>Step 2: Expect a confirmation email within 7-10 days post-registration.</li>
+      <li>Step 3: Engage in the pilot training session.</li>
+      <li>Step 4: Schedule and submit the preliminary date through <a href="https://forms.gle/pUazFNqEatqWwyjT6"><strong>Preliminary Date Submission Form</strong></a>.</li>
+      <li>Step 5: After step 3 & 4 submission, receive a unique registration link for your organization via email.</li>
+      <li>
+        Step 6: Promote prelims using the <a href="https://ieeeyesist12.org/yesist12-brand/"><strong>YESIST12 brand toolkit</strong></a>.
+        <ul class="action-points">
+          <li><span class="point-label">Participation:</span> Ensure at least 30 teams from diverse Student Branches participate.</li>
+          <li><span class="point-label">Content Approval:</span> Seek approval for outreach material from the IEEE YESIST12 Team.</li>
+          <li><span class="point-label">Submission Timeline:</span> Close abstract submissions 7 days before the prelims date.</li>
+          <li><span class="point-label">Funding:</span> Explore funding and sponsorship opportunities through IEEE.</li>
+          <li><span class="point-label">Fee Policy:</span> Collect registration fees if required.</li>
+        </ul>
+      </li>
+      <li>Step 7: Invite judges from academia and industry using LinkedIn/IEEE Collabratec.</li>
+      <li>Step 8: Execute prelims using the provided evaluation sheet in accordance with the brand toolkit.</li>
+      <li>Step 9: Submit a comprehensive report and results as directed.</li>
+      <li>Step 10: Encourage a broader audience to attend the grand finale.</li>
+      <li>Step 11: Assist in identifying potential new pilots in your locality.</li>
+    </ul>
+
+    <p class="section-end scroll-animate delay-1">
+      Your efforts drive the success of YESIST12 Prelims. Best of luck on this journey of innovation and excellence!
+    </p>
+  </div>
+</section>
+
+    <!-- Scripts -->
+    <script src="../components/header.js"></script>
+    <script src="../components/footer.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

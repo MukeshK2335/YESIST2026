@@ -1,7 +1,7 @@
 // --- DYNAMIC PATH WORKAROUND ---
-// This script checks if the current page is in a subfolder.
-const isTrackPage = window.location.pathname.includes('/tracks/');
-const basePath = isTrackPage ? '../' : '';
+// This script checks if the current page is in a subfolder (like /tracks/ or /pilot/).
+const isInSubfolder = window.location.pathname.toLowerCase().includes('/tracks/') || window.location.pathname.toLowerCase().includes('/pilot/');
+const basePath = isInSubfolder ? '../' : '';
 
 const headerHTML = `
 <header class="site-header">
@@ -15,6 +15,7 @@ const headerHTML = `
                 <!-- ⭐ FIX: All paths now use the dynamic 'basePath' variable -->
                 <li><a href="${basePath}index.html">HOME</a></li>
                 <li><a href="${basePath}about-us.html">ABOUT US</a></li>
+              
                 <li class="has-dropdown">
                     <a href="#">TRACKS</a>
                     <ul class="dropdown">
@@ -48,6 +49,15 @@ const headerHTML = `
                         <li><a href="${basePath}become_jury.html">Become a Jury</a></li>
                     </ul>
                 </li>
+                <li class="has-dropdown">
+                    <a href="#">PILOT</a>
+                    <ul class="dropdown">
+                        <li><a href="${basePath}Pilot/pilot_instructions.html">Pilot Instructions</a></li>
+                        <li><a href="${basePath}Pilot/pilot_awards.html">Pilot Awards</a></li>
+                        <li><a href="${basePath}Pilot/pilot_registration.html">Pilot Registration</a></li>
+                    </ul>
+                </li>
+                <li><a href="${basePath}finale_2026.html">FINALE 2026</a></li>
                 <li><a href="#">SUBMIT ABSTRACT</a></li>
             </ul>
         </nav>

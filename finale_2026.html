@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finale 2026 - YESIST12</title>
+    <link rel="icon" type="image/png" href="images/IEEE-YESIST12-Logo-1024x307-1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .site-header {
+            background-color: #003366 !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky !important;
+            top: 0;
+            z-index: 1000 !important;
+        }
+        
+        /* Venue Responsive Grid */
+        .venue-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: stretch;
+        }
+        
+        .reveal-up { opacity: 0; }
+        .reveal-left { opacity: 0; }
+        .reveal-right { opacity: 0; }
+
+        .reveal-visible {
+            opacity: 1 !important;
+            animation: none !important; /* Reset animation classes to use JS triggered ones */
+        }
+
+        .animate-fadeInUp { animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+        .animate-fadeInLeft { animation: fadeInLeft 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+        .animate-fadeInRight { animation: fadeInRight 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+
+        @media (max-width: 992px) {
+            .venue-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .map-card {
+                height: 400px !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .venue-info-section {
+                padding: 60px 15px !important;
+            }
+            .map-card {
+                height: 300px !important;
+                border-radius: 20px !important;
+            }
+            .info-card {
+                padding: 20px !important;
+                border-radius: 18px !important;
+            }
+            .info-card i {
+                font-size: 20px !important;
+            }
+            .info-card h5 {
+                font-size: 0.7rem !important;
+            }
+            .info-card p, .info-card a {
+                font-size: 1rem !important;
+            }
+        }
+
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 500px;
+            filter: blur(4px);
+            transition: all 0.3s;
+            opacity: 0.4;
+        }
+        .swiper-slide-active {
+            filter: blur(0px);
+            opacity: 1;
+        }
+        .attraction-card-new {
+            background: white;
+            padding: 0;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .attraction-img-wrapper {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        }
+        .attraction-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .attraction-content-new {
+            padding: 20px;
+            text-align: center;
+            background: #fff;
+        }
+        .attraction-content-new h4 {
+            font-size: 1.3rem;
+            color: #003366;
+            font-weight: 700;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #003366 !important;
+            background: white;
+            width: 50px !important;
+            height: 50px !important;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 20px !important;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .swiper-slide {
+                width: 85%;
+            }
+            .attraction-img-wrapper {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Finale Image Header -->
+    <div class="finale-image-header reveal-up" style="position: relative; width: 100%; height: auto; margin-top: 0;">
+        <img src="images/Indonesia-venue2.jpg" alt="Indonesia Venue" style="width: 100%; height: auto; display: block;">
+    </div>
+
+    <!-- Grand Finale Venue Section -->
+    <section class="finale-venue-section" style="padding: 60px 20px; text-align: center; background-color: #fff; position: relative; overflow: hidden;">
+        <!-- Background decorative pattern (optional, based on image) -->
+        <div class="venue-bg-pattern" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; pointer-events: none; z-index: 0; background-image: url('images/indonesia-bg-pattern.png'); background-repeat: repeat; background-size: 400px;"></div>
+        
+        <div class="container" style="position: relative; z-index: 1; max-width: 1200px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; color: #003366; margin-bottom: 40px; font-weight: 700; font-family: 'Montserrat', sans-serif;">
+                IEEE YESIST12 Grand Finale Venue
+            </h2>
+            
+            <div class="venue-image-container" style="margin-bottom: 30px; display: inline-block; position: relative;">
+                <img src="images/Indonesia-venue.jpg" alt="Grand Finale Venue" style="max-width: 100%; height: auto; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); width: 600px;">
+            </div>
+            
+            <h3 style="font-size: 2rem; color: #003366; font-weight: 700; font-family: 'Montserrat', sans-serif;">
+                Universitas Nusa Mandiri, Indonesia
+            </h3>
+        </div>
+    </section>
+
+    
+
+    <!-- Venue Information Section -->
+    <section class="venue-info-section" style="padding: 100px 20px; background: #f8fafc; position: relative; overflow: hidden;">
+        <!-- Animated Background Gradient -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 10% 20%, rgba(0, 51, 102, 0.03) 0%, transparent 50%), radial-gradient(circle at 90% 80%, rgba(0, 51, 102, 0.03) 0%, transparent 50%);"></div>
+
+        <div class="container" style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+            <div style="text-align: center; margin-bottom: 70px;">
+                <span style="color: #003366; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem; display: block; margin-bottom: 10px;">Find Us</span>
+                <h2 style="font-size: clamp(2.5rem, 5vw, 3.5rem); color: #003366; font-weight: 800; font-family: 'Montserrat', sans-serif; margin-bottom: 20px; letter-spacing: -1px;">Venue Information</h2>
+                <div style="width: 60px; height: 5px; background: #003366; margin: 0 auto; border-radius: 10px;"></div>
+            </div>
+
+            <div class="venue-grid">
+                
+                <!-- Map Card (Modern Float) -->
+                <div class="map-card" style="background: white; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.08); overflow: hidden; height: 550px; border: 1px solid rgba(0,0,0,0.05); transition: transform 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.664445831515!2d101.7777!3d2.9247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdcd1786191953%3A0x86737380907727a!2sUniversiti%20Kebangsaan%20Malaysia!5e0!3m2!1sen!2smy!4v1707740000000!5m2!1sen!2smy" 
+                        width="100%" height="100%" style="border:0; filter: grayscale(0.2) contrast(1.1);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <!-- Info Cards Stack -->
+                <div style="display: flex; flex-direction: column; gap: 25px;">
+                    
+                    <!-- Location Card -->
+                    <div class="info-card" style="background: white; padding: 30px; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.04); border-left: 6px solid #003366; transition: all 0.3s ease; display: flex; align-items: flex-start; gap: 20px;" onmouseover="this.style.boxShadow='0 20px 45px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='0 15px 35px rgba(0,0,0,0.04)'">
+                        <div style="width: 55px; height: 55px; background: rgba(0, 51, 102, 0.05); border-radius: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-location-dot" style="color: #003366; font-size: 24px;"></i>
+                        </div>
+                        <div>
+                            <h5 style="margin: 0 0 8px; color: #64748b; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1.5px; font-weight: 700;">Location</h5>
+                            <p style="margin: 0; color: #003366; font-size: 1.15rem; font-weight: 600; line-height: 1.4;">Universitas Nusa Mandiri,<br>Jakarta, Indonesia</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Card -->
+                    <div class="info-card" style="background: white; padding: 30px; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.04); border-left: 6px solid #003366; transition: all 0.3s ease; display: flex; align-items: flex-start; gap: 20px;" onmouseover="this.style.boxShadow='0 20px 45px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='0 15px 35px rgba(0,0,0,0.04)'">
+                        <div style="width: 55px; height: 55px; background: rgba(0, 51, 102, 0.05); border-radius: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-headset" style="color: #003366; font-size: 24px;"></i>
+                        </div>
+                        <div>
+                            <h5 style="margin: 0 0 8px; color: #64748b; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1.5px; font-weight: 700;">Contact</h5>
+                            <p style="margin: 0; color: #003366; font-size: 1.15rem; font-weight: 600;">+216 71 766 000</p>
+                            <!-- <p style="margin: 5px 0 0; color: #64748b; font-size: 0.9rem;">Available 9:00 AM - 5:00 PM</p> -->
+                        </div>
+                    </div>
+
+                    <!-- Website Card -->
+                    <div class="info-card" style="background: white; padding: 30px; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.04); border-left: 6px solid #003366; transition: all 0.3s ease; display: flex; align-items: flex-start; gap: 20px;" onmouseover="this.style.boxShadow='0 20px 45px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='0 15px 35px rgba(0,0,0,0.04)'">
+                        <div style="width: 55px; height: 55px; background: rgba(0, 51, 102, 0.05); border-radius: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-mouse-pointer" style="color: #003366; font-size: 22px;"></i>
+                        </div>
+                        <div>
+                            <h5 style="margin: 0 0 8px; color: #64748b; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1.5px; font-weight: 700;">Website</h5>
+                            <a href="https://edu.ieee.org/my-ukm/" target="_blank" style="margin: 0; color: #003366; font-size: 1.15rem; font-weight: 600; text-decoration: none; word-break: break-all; transition: color 0.3s ease;" onmouseover="this.style.color='#0055aa'" onmouseout="this.style.color='#003366'">https://edu.ieee.org/my-ukm/</a>
+                        </div>
+                    </div>
+
+                    <!-- Compact CTA Section -->
+                    <div style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #edf2f7; position: relative; overflow: hidden; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#003366'; this.style.transform='translateY(-5px)'" onmouseout="this.style.borderColor='#edf2f7'; this.style.transform='translateY(0)'">
+                        <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+                            <div style="flex: 1;">
+                                <h4 style="margin: 0 0 5px; font-size: 1.1rem; font-weight: 700; color: #003366; font-family: 'Montserrat', sans-serif;">Plan Your Visit</h4>
+                                <p style="margin: 0; color: #64748b; font-size: 0.85rem; line-height: 1.4;">Get the best route to the venue instantly.</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/x9JrwFo3PotG6Y7G8" target="_blank" style="width: 45px; height: 45px; background: #003366; color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease; flex-shrink: 0;" onmouseover="this.style.transform='rotate(45deg)'" onmouseout="this.style.transform='rotate(0)'">
+                                <i class="fas fa-arrow-up-right-from-square" style="font-size: 16px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Local Attractions Section -->
+    <section class="local-attractions-section reveal-up" style="padding: 80px 20px; background-color: #fff; position: relative; overflow: hidden;">
+        <!-- Background Pattern -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; pointer-events: none; z-index: 0; background-image: url('images/indonesia-bg-pattern.png'); background-repeat: repeat; background-size: 500px;"></div>
+
+        <div class="container" style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.8rem; color: #003366; font-weight: 700; font-family: 'Montserrat', sans-serif; position: relative; display: inline-block;">
+                    Local Attractions
+                    <span style="display: block; width: 80px; height: 4px; background: #003366; margin: 15px auto 0;"></span>
+                </h2>
+            </div>
+
+            <!-- 3D Swiper Carousel -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="attraction-card-new">
+                            <div class="attraction-img-wrapper">
+                                <img src="images/hero1.jpg" alt="Komodo Island">
+                            </div>
+                            <div class="attraction-content-new">
+                                <h4>Komodo Island</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="attraction-card-new">
+                            <div class="attraction-img-wrapper">
+                                <img src="images/bali.png" alt="Sipadan Island">
+                            </div>
+                            <div class="attraction-content-new">
+                                <h4>Sipadan Island</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="attraction-card-new">
+                            <div class="attraction-img-wrapper">
+                                <img src="images/Indonesia-venue.jpg" alt="Gunung Mulu National Park">
+                            </div>
+                            <div class="attraction-content-new">
+                                <h4>Gunung Mulu National Park</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="attraction-card-new">
+                            <div class="attraction-img-wrapper">
+                                <img src="images/inndo.avif" alt="Penang Hill">
+                            </div>
+                            <div class="attraction-content-new">
+                                <h4>Penang Hill</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide">
+                        <div class="attraction-card-new">
+                            <div class="attraction-img-wrapper">
+                                <img src="images/hero2.jpg" alt="Borobudur Temple">
+                            </div>
+                            <div class="attraction-content-new">
+                                <h4>Borobudur Temple</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Scroll Reveal Animation Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        if (el.classList.contains('reveal-up')) el.classList.add('animate-fadeInUp');
+                        else if (el.classList.contains('reveal-left')) el.classList.add('animate-fadeInLeft');
+                        else if (el.classList.contains('reveal-right')) el.classList.add('animate-fadeInRight');
+                        
+                        el.classList.add('reveal-visible');
+                        observer.unobserve(el);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all reveal elements
+            document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            loop: true,
+            coverflowEffect: {
+                rotate: 20,
+                stretch: 0,
+                depth: 200,
+                modifier: 1,
+                slideShadows: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+
+    <!-- Scripts -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vibrant Pilot Award </title>
+     <link rel="icon" type="image/png" href="../images/IEEE-YESIST12-Logo-1024x307-1.png">
+    <link rel="stylesheet" href="../style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+/* ---------------- General Styles ---------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+
+html,body {
+    font-family: "Montserrat";
+  margin: 0;
+  padding: 0;
+   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+ 
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------------- Pilot Awards Hero ---------------- */
+.awards-hero {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  color: #ffffff;
+  background-image: url("../images/HeaderBG.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.awards-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+  transition: background 0.5s ease;
+}
+
+.awards-hero:hover::before {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.awards-hero .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.awards-hero .title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff; /* Explicitly set to white */
+  transition: transform 0.5s ease, color 0.5s ease;
+}
+
+.awards-hero .title:hover {
+  transform: scale(1.05);
+  color: #2bb884;
+}
+
+.awards-hero .hero-subtext {
+  font-size: 1.1rem;
+}
+
+.awards-hero .breadcrumb {
+  list-style: none;
+  padding: 0;
+  display: inline-flex;
+  gap: 5px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.awards-hero .breadcrumb li a {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.awards-hero .breadcrumb li a:hover {
+  color: #2bb884;
+}
+
+.awards-hero .breadcrumb li i {
+  font-size: 0.8rem;
+}
+
+
+/* ---------------- Scroll Animations ---------------- */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional delays (can add delay-1, delay-2, delay-3 in HTML) */
+.delay-1 {
+  transition-delay: 0.2s;
+}
+
+.delay-2 {
+  transition-delay: 0.4s;
+}
+
+.delay-3 {
+  transition-delay: 0.6s;
+}
+
+/* ---------------- Main Content ---------------- */
+main {
+  padding: 20px;
+}  
+
+/* ---------------- Pilot Award Sections ---------------- */
+.pilot-award-section {
+    padding: 30px 50px;
+    text-align: left;
+    color: #fff; /* default text color, can be overridden */
+}
+
+.pilot-award-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff; /* inner cont ainer */
+    padding: 40px 100px;
+    border-radius: 8px;
+    box-sizing: border-box;
+   
+}
+
+/* ---------------- Headings ---------------- */
+.section-title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2BB884; /* default color */
+}
+
+.section-title.main {
+    color: #000000; /* optional override for main section */
+}
+
+.award-subtitle {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #0A4360;
+}
+
+/* ---------------- Paragraphs ---------------- */
+.award-description,
+.pilot-award-section p,
+.pilot-award-section ol {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* ---------------- Lists ---------------- */
+.award-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    padding:20px; 
+}
+
+.award-list li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #0A4360;
+    
+}
+
+.award-list li i {
+    color: #2BB884;
+}
+
+.award-list li:hover {
+    color: #2BB884;
+}
+
+/* ---------------- Spacer ---------------- */
+.spacer {
+    height: 20px;
+}
+
+/* ---------------- Button ---------------- */
+.button-wrapper {
+    text-align: center;
+}
+
+.pilot-button {
+    background: linear-gradient(220deg, #0A4360 0%, #2BB884 100%);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.6s ease;
+}
+
+.pilot-button:hover {
+    background: #0A4360;
+    transform: scale(1.05);
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .pilot-award-section .container {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.6rem;
+    }
+}
+/* Scroll Animation Base */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+/* When element is in view */
+.scroll-animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: delay classes */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+.delay-4 { transition-delay: 0.8s; }
+ 
+    </style>
+  </head>
+
+  <body>
+   
+<section class="awards-hero">
+  <div class="container">
+    <!-- Main Title -->
+    <h1 class="title scroll-animate animate-up delay-1">Pilot Awards</h1>
+
+    <!-- Breadcrumb navigation -->
+    <ul class="breadcrumb">
+      <li class="scroll-animate animate-up delay-1">
+        <a href="../index.html">Home</a>
+      </li>
+      <li class="scroll-animate animate-up delay-2">
+        <i class="fas fa-chevron-right"></i>
+      </li>
+      <li class="scroll-animate animate-up delay-3">Pilot Awards</li>
+    </ul>
+
+    <!-- Hero subtitle -->
+    <p class="hero-subtext scroll-animate animate-up delay-2">
+      Explore the awards and recognitions received by our pilots for outstanding performance and excellence.
+    </p>
+  </div>
+</section>
+
+<section class="pilot-award-section"  style="background: linear-gradient(220deg, #0A4360 0%, #2BB884 100%);
+;">
+  <div class="container scroll-animate delay-1">
+    <!-- Heading -->
+    <h1 class="section-title main ">YESIST12 VIBRANT PILOT AWARD</h1>
+
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- Intro Paragraph -->
+    <p class="intro-text">
+      We profusely thank you for the acceptance from your organisation to become the Pilot of this grand international event and make the young innovators and students aware of United Nations Sustainable Development Goals and their importance. Social Responsibility is an attribute required to build the character of a student and engineering with empathy is the need of the hour to improve the quality of life. We hope that our working together is a step ahead to serve the humanity with thoughtful innovations from young minds. We are excited to see the best finds by you as a Pilot in the grand finale of YESIST’12 2025.
+    </p>
+
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- Award Categories -->
+    <p>IEEE YESIST12 is pleased to announce the vibrant pilot awards in the following categories:</p>
+    <ol class="award-list">
+      <li><b>Vibrant Pilot – Hall of Fame</b></li>
+      <li><b>Vibrant Pilot – Loyalty</b></li>
+      <li><b>Vibrant Pilot – Excellence</b></li>
+      <li><b>Vibrant Pilot – Grand Entry</b></li>
+    </ol>
+
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- Note -->
+    <p><strong>Note:</strong> A pilot can apply to any number of awards meeting the eligibility criteria</p>
+  </div>
+</section>
+
+<section class="pilot-award-section" style="background-color: #0A4360;">
+  <div class="container scroll-animate delay-1">
+    <!-- Section Heading -->
+    <h3 class="award-subtitle">YESIST12 VIBRANT PILOT AWARD​</h3>
+    <h1 class="section-title">Vibrant Pilot - Hall of Fame</h1>
+
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- Paragraph -->
+    <p class="award-description">
+      This is to honour the pilots who have shown excellence in more than one attribute, such as excellence in organisation of the prelims shown by the number of teams turned out for Finals and number of times the teams winning in the finals, industry interaction in the pilot program followed by industry mentorship for the teams, support extended for any entrepreneurship or IPR turning out of the program.
+    </p>
+
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- Awards List -->
+    <ul class="award-list">
+      <li><i class="fas fa-award"></i> <strong>Winner:</strong> Plaque and Certificate</li>
+      <li><i class="fas fa-star"></i> <strong>Honourable Mention:</strong> Certificate</li>
+    </ul>
+
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- Button -->
+    <div class="button-wrapper">
+      <a href="https://forms.gle/3rYZBc4tvKyUm5F18" target="_blank" class="pilot-button">
+        Register
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="pilot-award-section" style="background-color: #2BB884">
+  <div class="container scroll-animate delay-1">
+    <!-- Section Heading -->
+    <h3 class="award-subtitle">YESIST12 VIBRANT PILOT AWARD​</h3>
+    <h1 class="section-title">Vibrant Pilot - Grand Entry</h1>
+
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- Paragraph -->
+    <p class="award-description">
+There are many pilots newly added every year and the first timers who show
+excellence in organising the pilots, following the guidelines, volunteer for behind
+the scenes work and show great endeavour to ensure the success of the event
+will be selected for this award. This is to encourage the pilots who are new to the
+game but show winning promise.
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- Awards List -->
+    <ul class="award-list">
+      <li><i class="fas fa-award"></i> <strong>Winner:</strong> Plaque and Certificate</li>
+      <li><i class="fas fa-star"></i> <strong>Honourable Mention:</strong> Certificate</li>
+    </ul>
+
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- Button -->
+    <div class="button-wrapper">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXV3-KosSf9ohg512fEkxsq09jSaiZllAX6ZHut3wpoXsaPQ/closedform target="_blank" class="pilot-button">
+        Register
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="pilot-award-section" style="background-color: #0A4360">
+  <div class="container scroll-animate delay-1">
+    <!-- Section Heading -->
+    <h3 class="award-subtitle">YESIST12 VIBRANT PILOT AWARD​</h3>
+    <h1 class="section-title">Vibrant Pilot - Excellence</h1>
+
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- Paragraph -->
+    <p class="award-description">
+Winners will be pilots who show excellence in contributing to the winning teams in the Finals and excellence in continued contribution towards the YESIST12 (SS12). The attributes for evaluation will be taken from the pilots efforts towards best practices for improving the effectiveness of the pilot program, report submitted immediately and report published, follow up activities with the participants reported after the pilot program and after the finals.
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- Awards List -->
+    <ul class="award-list">
+      <li><i class="fas fa-award"></i> <strong>Winner:</strong> Plaque and Certificate</li>
+      <li><i class="fas fa-star"></i> <strong>Honourable Mention:</strong> Certificate</li>
+    </ul>
+
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- Button -->
+    <div class="button-wrapper">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgESdatoNle1IzP4ZvHqFpov6RYY7emIGptRfGIvE2N_j1pQ/closedform="_blank" class="pilot-button">
+        Register
+      </a>
+    </div>
+  </div>
+</section>
+
+    <!-- Scripts -->
+    <script src="../components/header.js"></script>
+    <script src="../components/footer.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>
