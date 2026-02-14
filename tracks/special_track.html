@@ -12,13 +12,28 @@
     />
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../css/track_style.css" />
-    <link rel="stylesheet" href="../css/special_track.css" />
+    <link rel="stylesheet" href="../css/special_track_junior_einstein.css" />
     <link rel="stylesheet" href="../jury-carousel.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
     .innovation-hero .title {
       color: #ffffff !important;
+    }
+    /* Mobile tweaks for countdown and buttons */
+    @media (max-width: 768px) {
+      .flip-countdown {
+        grid-template-columns: repeat(4, minmax(64px, 1fr));
+        gap: 8px;
+      }
+      .flip-card {
+        width: 64px;
+        height: 56px;
+        font-size: 22px;
+      }
+      .abstract-card .btn {
+        min-width: 100%;
+      }
     }
 
     .abstract-section {
@@ -352,7 +367,7 @@
 
   <section class="innovation-hero">
     <div class="container">
-      <h1 class="title">Special Track</h1>
+      <h1 class="title scroll-animate animate-up delay-1">Special Track</h1>
       <ul class="breadcrumb">
         <li class="scroll-animate animate-up delay-1">
           <a href="../index.html">Home</a>
@@ -411,7 +426,7 @@
     <section class="innovation-description">
       <div class="container">
         <p class="theme-text scroll-animate animate-fade delay-2">
-          The Special Track at YESIST12 2025 focuses on innovative, technology-driven solutions addressing real-world societal challenges aligned with the UN Sustainable Development Goals (SDGs).
+          The Special Track at YESIST12 2026 focuses on innovative, technology-driven solutions addressing real-world societal challenges aligned with the UN Sustainable Development Goals (SDGs).
           It encourages student innovators to develop impactful projects under themes like:
         </p>
         <ul class="sdg-points">
@@ -514,10 +529,10 @@
             </div>
           </div>
           <div class="abstract-actions">
-            <a class="btn download-btn" href="http://portal.ieeeyesist12.org/files/Abstract-template-2026.pptx" target="_blank">
+            <a class="btn download-btn" href="https://portal.ieeeyesist12.org/files/Abstract-template-2026.pptx" target="_blank" rel="noopener">
               <i class="fas fa-download"></i> DOWNLOAD ABSTRACT TEMPLATE
             </a>
-            <a class="btn submit-btn" href="https://portal.ieeeyesist12.org/link/st-direct" target="_blank">
+            <a class="btn submit-btn" href="https://portal.ieeeyesist12.org/link/st-direct" target="_blank" rel="noopener">
               <i class="fas fa-paper-plane"></i> Submit Abstract
             </a>
           </div>
@@ -1115,7 +1130,7 @@
     <section class="winners-section">
       <div class="objectives-section">
         <h2 class="section-heading scroll-animate animate-down delay-1">
-          Previous Year Achivers(2025)
+          Previous Year Achievers (2025)
         </h2>
       </div>
       <div class="jury-carousel-container">
