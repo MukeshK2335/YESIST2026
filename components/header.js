@@ -50,8 +50,16 @@ const headerHTML = `
                     </ul>
                 </li>
                 <li class="has-dropdown">
+                    <a href="#">Yesist12 Corner</a>
+                    <ul class="dropdown">
+                        <li><a href="${basePath}brand-toolkit.html">Brand Toolkit</a></li>
+                        <li><a href="#">Editions</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
                     <a href="#">PILOT</a>
                     <ul class="dropdown">
+                        <li><a href="https://portal.ieeeyesist12.org/pilot-list" target="_blank" rel="noopener">Pilot 2026</a></li>
                         <li><a href="${basePath}Pilot/pilot_instructions.html">Pilot Instructions</a></li>
                         <li><a href="${basePath}Pilot/pilot_awards.html">Pilot Awards</a></li>
                         <li><a href="${basePath}Pilot/pilot_registration.html">Pilot Registration</a></li>

@@ -20,9 +20,23 @@ const footerHTML = `
             <h3>Quick Links</h3>
             <ul>
                 <li><a href="${basePathFooter}index.html">Home</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="${basePathFooter}index.html#reach-us">Contact Us</a></li>
                 <li><a href="#">Sitemap</a></li>
-                <li><a href="#">IEEE Privacy Policy</a></li>
+                <li><a href="#">Accessibility</a></li>
+                <li><a href="#">Nondiscrimination Policy</a></li>
+                <li><a href="https://www.ieee.org/security-privacy.html" target="_blank" rel="noopener">IEEE Privacy Policy</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Our Tracks</h3>
+            <ul>
+                <li><a href="${basePathFooter}tracks/innovtion_challenge.html">Innovation Challenge</a></li>
+                <li><a href="${basePathFooter}tracks/junior_einstein.html">Junior Einstein</a></li>
+                <li><a href="${basePathFooter}tracks/maker_fair.html">Maker Fair</a></li>
+                <li><a href="${basePathFooter}tracks/wepower.html">WePOWER Track</a></li>
+                <li><a href="${basePathFooter}tracks/special_track.html">Special Track</a></li>
+                <li><a href="${basePathFooter}tracks/iengage.html">IEngage Track</a></li>
             </ul>
         </div>
         

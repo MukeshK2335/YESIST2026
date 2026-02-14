@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YESIST12 Brand Experience | IEEE YESIST12</title>
+    <link rel="icon" type="image/png" href="images/IEEE-YESIST12-Logo-1024x307-1.png">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* Match Special Track hero (innovation-hero) */
+        .innovation-hero {
+            padding: 100px 0;
+            text-align: center;
+            color: #ffffff;
+            background-image: url('images/HeaderBG.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .innovation-hero::before,
+        .innovation-hero::after {
+            /* Remove any overlays to match the clean Special Track hero */
+            content: none;
+        }
+        .innovation-hero .container {
+            max-width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+        .innovation-hero .title {
+            color: #ffffff;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            line-height: 1.2;
+            margin: 0 0 10px 0;
+        }
+        .innovation-hero .breadcrumb {
+            list-style: none;
+            padding: 0;
+            display: inline-flex;
+            gap: 6px;
+            color: #fff;
+            margin: 0;
+        }
+        .innovation-hero .breadcrumb a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .brand-section {
+            padding: 60px 0;
+            background: #fff;
+        }
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            align-items: start;
+        }
+        .brand-card {
+            background: var(--white-color);
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            padding: 24px;
+        }
+        .brand-card h3 {
+            margin-bottom: 12px;
+        }
+        .swatch {
+            height: 64px;
+            border-radius: 8px;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+            margin-bottom: 10px;
+        }
+        .swatch.primary { background: var(--primary-color); }
+        .swatch.accent { background: var(--accent-color); }
+        .swatch.light { background: var(--light-bg-color); }
+        .brand-meta {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 14px;
+        }
+        .btn-ghost {
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            padding: 10px 16px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            color: var(--primary-color);
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .btn-ghost:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            transform: translateY(-1px);
+        }
+        .guidelines-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .guideline {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            background: #f9fbfb;
+            border: 1px solid #eef2f1;
+            border-radius: 8px;
+            padding: 14px 16px;
+        }
+        .guideline i {
+            color: var(--accent-color);
+            margin-top: 2px;
+        }
+        .asset-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .asset {
+            border: 1px solid #eef2f1;
+            border-radius: 8px;
+            padding: 14px 16px;
+            background: #fefefe;
+        }
+        .asset-title {
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--primary-color);
+        }
+        .toolkits-section .section-title {
+            text-align: center;
+        }
+        .toolkit-card {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 28px 32px;
+            border-radius: 24px;
+            background: linear-gradient(180deg, #0a415c 0%, #2bb884 100%);
+            color: #fff;
+            border: 6px solid rgba(43, 184, 132, 0.3);
+            box-shadow: 0 12px 30px rgba(10, 65, 92, 0.25);
+        }
+        .toolkit-card h3 {
+            text-align: center;
+            font-size: 2rem;
+            margin: 0 0 12px 0;
+            color: #fff;
+        }
+        .toolkit-card p {
+            text-align: center;
+            margin: 0 auto 14px auto;
+            max-width: 640px;
+            color: #e9f6f2;
+        }
+        .toolkit-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        .toolkit-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+        }
+        .toolkit-list li i {
+            color: #fff;
+        }
+        .brand-contact {
+            text-align: center;
+            padding: 40px 0 60px;
+            background: #fff;
+        }
+        .brand-contact .subtitle {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        .brand-contact .email {
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        /* Local scroll animation variants and delays */
+        .scroll-animate { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .scroll-animate.animate-up { transform: translateY(30px); }
+        .scroll-animate.animate-down { transform: translateY(-30px); }
+        .scroll-animate.animate-left { transform: translateX(-30px); }
+        .scroll-animate.animate-right { transform: translateX(30px); }
+        .scroll-animate.animate-fade { transform: none; }
+        .scroll-animate.in-view { opacity: 1; transform: translate(0,0); }
+        .delay-0 { transition-delay: 0s; }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+        .delay-6 { transition-delay: 0.6s; }
+
+        /* --- Mobile Responsiveness --- */
+        .innovation-hero .breadcrumb {
+            flex-wrap: wrap;
+            row-gap: 4px;
+            justify-content: center;
+        }
+        main img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 992px) {
+            .innovation-hero { padding: 80px 0; }
+        }
+        @media (max-width: 768px) {
+            main .container { padding: 0 16px; }
+            .brand-section { padding: 32px 0; }
+            .innovation-hero { padding: 64px 0; }
+            .toolkit-card { padding: 20px 18px; border-width: 4px; border-radius: 18px; }
+            .toolkit-card h3 { font-size: 1.6rem; }
+            .toolkit-card p { font-size: 0.95rem; }
+            .toolkit-list { gap: 8px; }
+            .brand-contact .email { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+        }
+    </style>
+    <link rel="icon" href="images/eye_logo.png" />
+</head>
+<body>
+    <main>
+        <section class="innovation-hero">
+            <div class="container">
+                <h1 class="title scroll-animate animate-up delay-1">YESIST12 Brand Experience</h1>
+                <ul class="breadcrumb">
+                    <li class="scroll-animate animate-up delay-1"><a href="index.html">Home</a></li>
+                    <li class="scroll-animate animate-up delay-2"><i class="fas fa-chevron-right"></i></li>
+                    <li class="scroll-animate animate-up delay-3">YESIST12 Brand Experience</li>
+                </ul>
+            </div>
+        </section>
+
+       
+
+        <section class="brand-section toolkits-section scroll-animate animate-up delay-1">
+            <div class="container">
+                <h2 class="section-title float-text scroll-animate animate-down delay-1" data-text="Tool Kits">YESIST12 Tool Kits</h2>
+                <div class="toolkit-card scroll-animate animate-up delay-2">
+                    <h3>Pilot Toolkit</h3>
+                    <p>This toolkit provides usage of editable templates for Pilot Prelims Conduct, which includes:</p>
+                    <ul class="toolkit-list">
+                        <li class="scroll-animate animate-left delay-1"><i class="fas fa-circle-dot"></i><span>Certificates for Prelims Participants/Winners/Jury</span></li>
+                        <li class="scroll-animate animate-left delay-2"><i class="fas fa-circle-dot"></i><span>Announcement Posters</span></li>
+                        <li class="scroll-animate animate-left delay-3"><i class="fas fa-circle-dot"></i><span>Jury Announcement And Evaluation Poster</span></li>
+                        <li class="scroll-animate animate-left delay-4"><i class="fas fa-circle-dot"></i><span>Prelims Virtual Background</span></li>
+                        <li class="scroll-animate animate-left delay-5"><i class="fas fa-circle-dot"></i><span>Team Presentation Template</span></li>
+                        <li class="scroll-animate animate-left delay-6"><i class="fas fa-circle-dot"></i><span>Prelims Evaluation Sheet</span></li>
+                        <li class="scroll-animate animate-left delay-6"><i class="fas fa-circle-dot"></i><span>Report Template</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="brand-section brand-contact scroll-animate animate-up delay-1">
+            <div class="container">
+                <div class="subtitle scroll-animate delay-1">For any queries, kindly reach out to us</div>
+                <a class="email scroll-animate delay-2" href="mailto:support@ieeeyesist12.org">support@ieeeyesist12.org</a>
+            </div>
+        </section>
+        
+    </main>
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

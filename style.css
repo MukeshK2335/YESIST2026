@@ -1621,6 +1621,8 @@ header .dropdown li a,
 
 .footer-logo p {
     color: #ffffff !important;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .footer-logo p a,
@@ -1851,7 +1853,6 @@ header .dropdown li a,
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.contact-form .form-group,
 .contact-form .form-group-half {
     margin-bottom: 20px;
     display: flex;
@@ -2065,9 +2066,23 @@ header .dropdown li a,
 
 .award-info {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    background: var(--white-color);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-top: 30px;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.award-info:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .award-icon img {
@@ -2075,11 +2090,19 @@ header .dropdown li a,
     height: auto;
 }
 
+.award-icon i {
+    font-size: 48px;
+    color: var(--accent-color);
+    margin-bottom: 12px;
+}
+
 .award-text p {
     margin: 0;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 1.4;
+    color: var(--primary-color);
+    text-align: center;
 }
 
 .about-yesist-images {
@@ -2783,6 +2806,10 @@ main {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+}
+
+.contact-form .form-group {
+    display: block;
 }
 
 .contact-form .form-group {
