@@ -66,7 +66,7 @@ const headerHTML = `
                     </ul>
                 </li>
                 <li><a href="${basePath}finale_2026.html">FINALE 2026</a></li>
-                <li><a href="#">SUBMIT ABSTRACT</a></li>
+                <li><a href="https://portal.ieeeyesist12.org/" target="_blank" rel="noopener">SUBMIT ABSTRACT</a></li>
             </ul>
         </nav>
         <button class="hamburger" aria-label="Toggle Navigation">
