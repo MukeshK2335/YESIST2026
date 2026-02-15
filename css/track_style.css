@@ -130,113 +130,7 @@ main {
 }
 
 /* ---------------- Footer ---------------- */
-.site-footer {
-  background: url("../images/network-bg.svg");
-  background-color: #00202c;
-  color: #fff;
-  font-family: "Montserrat", sans-serif;
-  padding: 50px 0 0 0;
-  position: relative;
-}
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.footer-logo {
-  width: 25%;
-  max-width: 300px;
-  margin-right: 20px;
-  text-align: left;
-}
-.footer-logo img {
-  width: 160px;
-  margin-bottom: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 15px;
-}
-.footer-logo p {
-  font-size: 16px;
-  color: #ddd;
-  line-height: 1.7;
-  text-align: justify;
-}
-.footer-column {
-  flex: 1;
-  min-width: 180px;
-  margin: 0 15px;
-  padding-top: 10px;
-  text-align: left;
-}
-.footer-column h3 {
-  color: #2bb884;
-  font-size: 20px;
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.footer-column ul li {
-  margin-bottom: 10px;
-}
-.footer-column ul li a {
-  color: #fff;
-  font-size: 16px;
-  transition: color 0.3s;
-}
-.footer-column ul li a:hover {
-  color: #2bb884;
-}
-.contact-info p {
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-}
-.contact-icon {
-  margin-right: 10px;
-  font-size: 18px;
-}
-.social-icons {
-  display: flex;
-  margin-top: 15px;
-}
-.social-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background-color: #2bb884;
-  border-radius: 50%;
-  margin-right: 8px;
-  color: #fff;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-.social-icon:hover {
-  background-color: #fff;
-  color: #2bb884;
-}
-.footer-bottom {
-  padding: 15px 50px;
-  margin-top: 30px;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #ccc;
-}
-.footer-bottom p {
-  margin: 0;
-  font-size: 16px;
-}
+/* Footer layout and styling now fully inherited from global style.css */
 .hamburger {
   display: none;
 }
@@ -880,6 +774,13 @@ main {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
+}
+
+.innovation-theme .theme-icon-box .theme-text,
+.maker-theme .theme-icon-box .theme-text,
+.wepower-theme .theme-icon-box .theme-text,
+.junior-theme .theme-icon-box .theme-text {
+  color: #ffffff;
 }
 
 /* Optional: Add some animation */

@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IEEE YESIST12 Editions</title>
+    <link rel="icon" type="image/png" href="images/IEEE-YESIST12-Logo-1024x307-1.png">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .innovation-hero {
+            padding: 100px 0;
+            text-align: center;
+            color: #ffffff;
+            background-image: url('images/HeaderBG.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .innovation-hero::before,
+        .innovation-hero::after {
+            content: none;
+        }
+        .innovation-hero .container {
+            max-width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+        .innovation-hero .title {
+            color: #ffffff;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            line-height: 1.2;
+            margin: 0 0 10px 0;
+        }
+        .innovation-hero .breadcrumb {
+            list-style: none;
+            padding: 0;
+            display: inline-flex;
+            gap: 6px;
+            color: #fff;
+            margin: 0;
+        }
+        .innovation-hero .breadcrumb a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .yesist-section {
+            width: 100%;
+            padding: 100px 0;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .yesist-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            transform: scale(1.05);
+            transition: transform 8s ease;
+            z-index: -2;
+        }
+        .yesist-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.80);
+            z-index: -1;
+        }
+        .yesist-section:hover::before {
+            transform: scale(1.05);
+        }
+        .bg-2024::before {
+            background-image: url(https://ieeeyesist12.org/wp-content/uploads/2025/01/Screenshot-2025-01-12-115412.png);
+        }
+        .bg-2023::before {
+            background-image: url(https://ieeeyesist12.org/wp-content/uploads/2025/01/Screenshot-2025-01-12-113901-1.png);
+        }
+        .bg-2022::before {
+            background-image: url(https://ieeeyesist12.org/wp-content/uploads/2023/03/IMG_6394-scaled.jpg);
+        }
+        .bg-2021::before {
+            background-image: url(https://ieeeyesist12.org/wp-content/uploads/2023/04/Picture3.jpg);
+        }
+        .yesist-container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 0 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+        .yesist-left {
+            flex: 0 0 42%;
+        }
+        .yesist-title {
+            font-size: 60px;
+            font-weight: 800;
+            margin: 0;
+        }
+        .yesist-gradient {
+            background: linear-gradient(70deg, #2BB884 20%, #2B6BB8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .yesist-subtitle {
+            font-size: 50px;
+            font-weight: 700;
+            margin: 0;
+        }
+        .yesist-venue-title {
+            margin-top: 30px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .yesist-venue-img {
+            width: 360px;
+            height: 200px;
+            border-radius: 20px;
+            margin-top: 20px;
+            background: #fff;
+            padding: 20px;
+            object-fit: contain;
+            transition: all 1s ease;
+        }
+        .yesist-btn {
+            display: inline-block;
+            margin: 30px 0;
+            padding: 14px 36px;
+            background: linear-gradient(90deg,#0A4360,#2BB884);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .yesist-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        .yesist-right {
+            flex: 0 0 55%;
+        }
+        .yesist-top-images {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .yesist-top-images img {
+            width: 48%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 14px;
+            transition: all 1s ease;
+        }
+        .yesist-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #f1f1f1;
+            text-align: justify;
+            max-width: 100%;
+            margin-top: 20px;
+        }
+        .fade-left,
+        .fade-right {
+            opacity: 0;
+            transition: all 0.1s ease-out;
+        }
+        .fade-left {
+            transform: translateX(-50px);
+        }
+        .fade-right {
+            transform: translateX(50px);
+        }
+        .fade-left.show,
+        .fade-right.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.3s ease-out;
+        }
+        .zoom-in.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+        @media(max-width:768px){
+            .yesist-container {
+                flex-direction: column;
+                padding: 0 30px;
+            }
+            .yesist-title {
+                font-size: 36px;
+            }
+            .yesist-subtitle {
+                font-size: 28px;
+            }
+            .yesist-right {
+                margin-top: 40px;
+            }
+            .yesist-top-images {
+                flex-direction: column;
+            }
+            .yesist-top-images img {
+                width: 100%;
+            }
+        }
+        .yesist-section + .yesist-section {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    <main>
+        <section class="innovation-hero">
+            <div class="container">
+                <h1 class="title scroll-animate animate-up delay-1">IEEE YESIST12 Editions</h1>
+                <ul class="breadcrumb">
+                    <li class="scroll-animate animate-up delay-1"><a href="index.html">Home</a></li>
+                    <li class="scroll-animate animate-up delay-2"><i class="fas fa-chevron-right"></i></li>
+                    <li class="scroll-animate animate-up delay-3">Editions</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="yesist-section bg-2024">
+            <div class="yesist-container">
+                <div class="yesist-left fade-left">
+                    <h1 class="yesist-title">
+                        <span>#</span>
+                        <span class="yesist-gradient">YESIST12</span>
+                    </h1>
+                    <h2 class="yesist-subtitle">Edition 2024</h2>
+                    <h3 class="yesist-venue-title">Venue</h3>
+                    <img class="yesist-venue-img zoom-in" src="https://ieeeyesist12.org/wp-content/uploads/2025/01/YESIST12-2024-VENUE.png">
+                    <br>
+                    <a class="yesist-btn" href="https://ieeeyesist12.org/wp-content/uploads/2025/01/Report.pdf" target="_blank">
+                        → View Report
+                    </a>
+                </div>
+                <div class="yesist-right fade-right">
+                    <div class="yesist-top-images">
+                        <img class="zoom-in" src="https://ieeeyesist12.org/wp-content/uploads/2025/01/Screenshot-2025-01-12-115412.png">
+                        <img class="zoom-in" src="https://ieeeyesist12.org/wp-content/uploads/2025/01/Screenshot-2025-01-12-115357.png">
+                    </div>
+                    <p class="yesist-text">
+                        A vibrant morning set the tone for the inauguration of IEEE YESIST12 2024 at Tunis Science City, Tunisia, kicking off an event centered on innovation and global collaboration. The occasion gathered an esteemed lineup of dignitaries and experts, including Dr. Ramalatha Marimuthu, General Chair of IEEE YESIST12, Habib Kammoun, Chair of IEEE Tunisia Section, Andrew Knight, President of IEEE IAS, Eric Berkowitz, Director of Membership at IEEE Computer Society, Dr. Lenin Raja, Director of EMC Test & Training Center Pvt Ltd, and Nehad El-Sherif, Founder of MNKYBR Technologies Inc. The event emphasized the commitment to the IEEE Code of Ethics, followed by the introduction of track and committee chairs. A key highlight was the unveiling of the IEEE YESIST12 Magazine, followed by thought-provoking inaugural addresses from distinguished speakers. As the ceremony concluded, the stage was set for a dynamic competition, with participants poised to present groundbreaking innovations, marking the beginning of the Grand Finale.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="yesist-section bg-2023">
+            <div class="yesist-container">
+                <div class="yesist-left fade-left">
+                    <h1 class="yesist-title">
+                        <span>#</span>
+                        <span class="yesist-gradient">YESIST12</span>
+                    </h1>
+                    <h2 class="yesist-subtitle">Edition 2023</h2>
+                    <h3 class="yesist-venue-title">Venue</h3>
+                    <img class="yesist-venue-img zoom-in" src="https://ieeeyesist12.org/wp-content/uploads/2025/01/YESIST12-VENUE-2023.jpg">
+                    <br>
+                    <a class="yesist-btn" href="https://ieeeyesist12.org/wp-content/uploads/2025/01/IEEE-YESIST12-2023-Grand-Finale-Report.pdf" target="_blank">
+                        → View Report
+                    </a>
+                </div>
+                <div class="yesist-right fade-right">
+                    <div class="yesist-top-images">
+                        <img class="zoom-in" src="https://ieeeyesist12.org/wp-content/uploads/2025/01/Screenshot-2025-01-12-113923.png">
+                        <img class="zoom-in" src="https://ieeeyesist12.org/wp-content/uploads/2025/01/Screenshot-2025-01-12-113911.png">
+                    </div>
+                    <p class="yesist-text">
+                        IEEE YESIST12 2023 provided a valuable platform for the exchange of innovative ideas and the dissemination of cutting-edge research in various fields. The YESIST12 Grand Finale in Egypt was an incredible journey that combined exploration of Egypt’s cultural treasures with opportunities for networking and collaboration within the IEEE community. We were so grateful to have our esteemed delegates grace their presence in our IEEE YESIST12 2023 Grand Finale. Prof. Ismail Abdel Ghafar Ismail Farag, President of AASTMT; Eric Berkowitz, Director of Membership, IEEE Computer Society; Mike Hinchey, IEEE R8 Director Elect and Professor, University of Limerick; Nehad El-Sherif, Founder and President, MNKYBR Technologies Inc.; Lenin Raja, AA Electro Magnetic Test Laboratory Private Limited, Gurgaon; Bozenna Pasik-Duncan, Professor, Kansas University; Prof. Akram Soliman Elselmy, Dean of the College of Engineering and Technology, AASTMT, Abu Kir Campus; Prof. Ahmed Hassan, Section Chair, Egypt; Prof. Yousry Elgamal, Former Minister of Education and AASTMT Senior Consultant; and Prof. Hesham Seoudy, Head of the Alexandria Engineers Syndicate
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="yesist-section bg-2022">
+            <div class="yesist-container">
+                <div class="yesist-left fade-left">
+                    <h1 class="yesist-title">
+                        <span>#</span>
+                        <span class="yesist-gradient">YESIST12</span>
+                    </h1>
+                    <h2 class="yesist-subtitle">Edition 2022</h2>
+                    <h3 class="yesist-venue-title">Venue</h3>
+                    <img class="yesist-venue-img zoom-in" src="https://ieeeyesist12.org/wp-content/uploads/2022/04/SVCE-1_page-0001-1024x276.jpg">
+                    <br>
+                    <a class="yesist-btn" href="https://ieeeyesist12.org/wp-content/uploads/2023/04/2022-report.pdf" target="_blank">
+                        → View Report
+                    </a>
+                </div>
+                <div class="yesist-right fade-right">
+                    <div class="yesist-top-images">
+                        <img class="zoom-in" src="https://ieeeyesist12.org/wp-content/uploads/2023/04/Picture1.jpg">
+                        <img class="zoom-in" src="https://ieeeyesist12.org/wp-content/uploads/2023/04/Picture2.jpg">
+                    </div>
+                    <p class="yesist-text">
+                        The YESIST12 Grand Finale was held as a hybrid event in Sri Venkateshwara College of Engineering, Bangalore from September 10, 2022 to September 11, 2022. The event was live on Microsoft Teams. The international talent show, IEEE YESIST12 was filled with students and young professionals showcasing their fresh ideas to address humanitarian and social issues directly impacting their communities. A year-long journey of identifying and mentoring talent culminated in the Grand Finale with immense participation from finalists, volunteers, and delegates.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="yesist-section bg-2021">
+            <div class="yesist-container">
+                <div class="yesist-left fade-left">
+                    <h1 class="yesist-title">
+                        <span>#</span>
+                        <span class="yesist-gradient">YESIST12</span>
+                    </h1>
+                    <h2 class="yesist-subtitle">Edition 2021</h2>
+                    <h3 class="yesist-venue-title">Venue: Online</h3>
+                    <br>
+                    <a class="yesist-btn" href="https://ieeeyesist12.org/wp-content/uploads/2023/04/IEEE-YESIST-12-2021-report.pdf" target="_blank">
+                        → View Report
+                    </a>
+                </div>
+                <div class="yesist-right fade-right">
+                    <div class="yesist-top-images">
+                        <img class="zoom-in" src="https://ieeeyesist12.org/wp-content/uploads/2023/04/Picture3.jpg">
+                        <img class="zoom-in" src="https://ieeeyesist12.org/wp-content/uploads/2023/04/Picture4-2021.jpg">
+                    </div>
+                    <p class="yesist-text">
+                        IEEE YESIST’12 2021 happened in a virtual mode using the Webex platform due to the global pandemic. The grand finale took place from the <strong>18th to the 20th of September 2021</strong>. The final pitching round led to the selection of <strong>6 winners, 8 runner-ups and 6 honourable mentions</strong> across 5 tracks including Innovation Challenge, Maker Fair, WePOWER, Junior Einstein and Special Track, involving around 183 participants from 16 countries.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script>
+        const animatedElements = document.querySelectorAll('.fade-left, .fade-right, .zoom-in');
+
+        function revealOnScroll() {
+            const windowHeight = window.innerHeight;
+
+            animatedElements.forEach((el, index) => {
+                const position = el.getBoundingClientRect().top;
+
+                if (position < windowHeight - 100) {
+                    setTimeout(() => {
+                        el.classList.add('show');
+                    }, index * 150);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

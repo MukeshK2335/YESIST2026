@@ -53,7 +53,7 @@ const headerHTML = `
                     <a href="#">Yesist12 Corner</a>
                     <ul class="dropdown">
                         <li><a href="${basePath}brand-toolkit.html">Brand Toolkit</a></li>
-                        <li><a href="#">Editions</a></li>
+                        <li><a href="${basePath}Editions-IEEEYESIST12.html">Editions</a></li>
                     </ul>
                 </li>
                 <li class="has-dropdown">
