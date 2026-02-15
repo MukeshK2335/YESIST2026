@@ -2737,12 +2737,31 @@ main {
 @media (max-width: 992px) {
     .countries-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 24px;
     }
 }
 
 @media (max-width: 600px) {
     .countries-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 16px;
+        row-gap: 20px;
+    }
+
+    .country-item {
+        min-width: auto;
+        gap: 8px;
+    }
+
+    .country-flag {
+        width: 44px;
+        height: 44px;
+        border-width: 3px;
+    }
+
+    .country-item span {
+        font-size: 0.9rem;
+        letter-spacing: 0.3px;
     }
 }
 
