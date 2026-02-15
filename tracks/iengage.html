@@ -169,9 +169,9 @@
     <div class="container">
       <div class="abstract-card">
         <h2 class="section-title">Submit your Abstract now</h2>
-        <div class="status-pill open">Open</div>
-        <h4 class="deadline">Call for Abstract-1 Ends: 20th Feb 2026</h4>
-        <div class="flip-countdown" data-countdown="2026-02-20T23:59:00">
+        <div class="status-pill closed">Yet to be open</div>
+        <h4 class="deadline">Call for Abstract Starts: 25th Feb 2026</h4>
+        <div class="flip-countdown" data-countdown="2026-02-25T00:00:00">
           <div class="flip-unit" data-unit="days">  
             <div class="flip-card"><span class="flip-number">00</span></div>
             <span class="flip-label">Days</span>
@@ -1260,21 +1260,21 @@
           setVal(secsEl, pad2(secs));
 
           if (statusEl) {
-            statusEl.textContent = 'Open';
-            statusEl.classList.add('open');
-            statusEl.classList.remove('closed');
+            statusEl.textContent = 'Yet to be open';
+            statusEl.classList.remove('open');
+            statusEl.classList.add('closed');
           }
 
           if (submitBtn) {
-            submitBtn.setAttribute('aria-disabled', 'false');
-            submitBtn.style.opacity = '1';
-            submitBtn.style.pointerEvents = 'auto';
+            submitBtn.setAttribute('aria-disabled', 'true');
+            submitBtn.style.opacity = '0.6';
+            submitBtn.style.pointerEvents = 'none';
           }
         } else {
           if (statusEl) {
-            statusEl.textContent = 'Closed';
-            statusEl.classList.remove('open');
-            statusEl.classList.add('closed');
+            statusEl.textContent = 'Open';
+            statusEl.classList.add('open');
+            statusEl.classList.remove('closed');
           }
 
           setVal(daysEl, '00');
@@ -1283,9 +1283,9 @@
           setVal(secsEl, '00');
 
           if (submitBtn) {
-            submitBtn.setAttribute('aria-disabled', 'true');
-            submitBtn.style.opacity = '0.6';
-            submitBtn.style.pointerEvents = 'none';
+            submitBtn.setAttribute('aria-disabled', 'false');
+            submitBtn.style.opacity = '1';
+            submitBtn.style.pointerEvents = 'auto';
           }
 
           clearInterval(timer);
@@ -1308,6 +1308,21 @@
           setInitial(secsEl, pad2(secs));
 
           if (statusEl) {
+            statusEl.textContent = 'Yet to be open';
+            statusEl.classList.remove('open');
+            statusEl.classList.add('closed');
+          }
+          if (submitBtn) {
+            submitBtn.setAttribute('aria-disabled', 'true');
+            submitBtn.style.opacity = '0.6';
+            submitBtn.style.pointerEvents = 'none';
+          }
+        } else {
+          setInitial(daysEl, '00');
+          setInitial(hoursEl, '00');
+          setInitial(minsEl, '00');
+          setInitial(secsEl, '00');
+          if (statusEl) {
             statusEl.textContent = 'Open';
             statusEl.classList.add('open');
             statusEl.classList.remove('closed');
@@ -1316,21 +1331,6 @@
             submitBtn.setAttribute('aria-disabled', 'false');
             submitBtn.style.opacity = '1';
             submitBtn.style.pointerEvents = 'auto';
-          }
-        } else {
-          setInitial(daysEl, '00');
-          setInitial(hoursEl, '00');
-          setInitial(minsEl, '00');
-          setInitial(secsEl, '00');
-          if (statusEl) {
-            statusEl.textContent = 'Closed';
-            statusEl.classList.remove('open');
-            statusEl.classList.add('closed');
-          }
-          if (submitBtn) {
-            submitBtn.setAttribute('aria-disabled', 'true');
-            submitBtn.style.opacity = '0.6';
-            submitBtn.style.pointerEvents = 'none';
           }
         }
       })();

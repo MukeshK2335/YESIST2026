@@ -178,6 +178,7 @@
             align-items: center;
             gap: 10px;
             color: #fff;
+            cursor: pointer;
         }
         .toolkit-list li i {
             color: #fff;
@@ -263,13 +264,27 @@
                     <h3>Pilot Toolkit</h3>
                     <p>This toolkit provides usage of editable templates for Pilot Prelims Conduct, which includes:</p>
                     <ul class="toolkit-list">
-                        <li class="scroll-animate animate-left delay-1"><i class="fas fa-circle-dot"></i><span>Certificates for Prelims Participants/Winners/Jury</span></li>
-                        <li class="scroll-animate animate-left delay-2"><i class="fas fa-circle-dot"></i><span>Announcement Posters</span></li>
-                        <li class="scroll-animate animate-left delay-3"><i class="fas fa-circle-dot"></i><span>Jury Announcement And Evaluation Poster</span></li>
-                        <li class="scroll-animate animate-left delay-4"><i class="fas fa-circle-dot"></i><span>Prelims Virtual Background</span></li>
-                        <li class="scroll-animate animate-left delay-5"><i class="fas fa-circle-dot"></i><span>Team Presentation Template</span></li>
-                        <li class="scroll-animate animate-left delay-6"><i class="fas fa-circle-dot"></i><span>Prelims Evaluation Sheet</span></li>
-                        <li class="scroll-animate animate-left delay-6"><i class="fas fa-circle-dot"></i><span>Report Template</span></li>
+                        <li class="scroll-animate animate-left delay-1" data-file-url="Tool-kit/certificate prelimes yesist12 .pptx">
+                            <i class="fas fa-circle-dot"></i><span>Certificates for Prelims Participants/Winners/Jury</span>
+                        </li>
+                        <li class="scroll-animate animate-left delay-2" data-file-url="Tool-kit/Announcement Posters .pptx">
+                            <i class="fas fa-circle-dot"></i><span>Announcement Posters</span>
+                        </li>
+                        <li class="scroll-animate animate-left delay-3" data-file-url="Tool-kit/Jury_Evaluation Poster .pptx">
+                            <i class="fas fa-circle-dot"></i><span>Jury Announcement And Evaluation Poster</span>
+                        </li>
+                        <li class="scroll-animate animate-left delay-4" data-file-url="Tool-kit/Prelims Virtual Background.jpeg">
+                            <i class="fas fa-circle-dot"></i><span>Prelims Virtual Background</span>
+                        </li>
+                        <li class="scroll-animate animate-left delay-5" data-file-url="Tool-kit/IEEE-YESIST12-26-Report-Template.docx">
+                            <i class="fas fa-circle-dot"></i><span>Team Presentation Template</span>
+                        </li>
+                        <li class="scroll-animate animate-left delay-6" data-file-url="">
+                            <i class="fas fa-circle-dot"></i><span>Prelims Evaluation Sheet</span>
+                        </li>
+                        <li class="scroll-animate animate-left delay-6" data-file-url="Toll-kit/IEEE-YESIST12-26-Report-Template.docx">
+                            <i class="fas fa-circle-dot"></i><span>Report Template</span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -283,6 +298,33 @@
         </section>
         
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var items = document.querySelectorAll('.toolkit-card .toolkit-list li[data-file-url]');
+            items.forEach(function (li) {
+                var url = li.getAttribute('data-file-url');
+                if (!url) return;
+                li.setAttribute('role', 'button');
+                li.setAttribute('tabindex', '0');
+                li.addEventListener('click', function () {
+                    var a = document.createElement('a');
+                    a.href = url;
+                    a.target = '_blank';
+                    a.download = '';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                });
+                li.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        li.click();
+                    }
+                });
+            });
+        });
+    </script>
 
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
