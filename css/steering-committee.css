@@ -76,7 +76,7 @@
 
 .committee-card-image {
     position: relative;
-    height: 320px;
+    height: 380px;
     overflow: hidden;
     background-color: #f5f5f5;
     display: flex;
@@ -461,6 +461,19 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
+    .steering-hero {
+        padding: 60px 0;
+    }
+
+    .steering-hero h1 {
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
     .steering-row {
         flex-direction: column;
     }
@@ -521,7 +534,7 @@
     }
     
     .committee-card-image {
-        height: 240px;
+        height: 300px;
     }
     
     .details-content {
