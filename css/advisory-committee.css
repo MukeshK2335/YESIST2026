@@ -1,6 +1,6 @@
 /* Advisory Committee Hero Section */
 .advisory-hero {
-    background-image: url('images/HeaderBG.jpg');
+    background-image: url('../images/HeaderBG.jpg');
     background-size: cover;
     background-position: center;
     color: white;

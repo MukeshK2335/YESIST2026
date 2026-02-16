@@ -1,6 +1,6 @@
 /* Steering Committee Hero Section */
 .steering-hero {
-    background-image: url('images/HeaderBG.jpg');
+    background-image: url('../images/HeaderBG.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -69,10 +69,10 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.committee-card:hover {
+/* .committee-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .committee-card-image {
     position: relative;
@@ -129,17 +129,17 @@
     z-index: 5;
 }
 
-.committee-card:hover .more-info-btn {
+/* .committee-card:hover .more-info-btn {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
-}
+} */
 
-.committee-card:hover .committee-card-details {
+/* .committee-card:hover .committee-card-details {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-}
+} */
 
 @keyframes fadeInUp {
     from {
@@ -152,7 +152,7 @@
     }
 }
 
-.committee-card:hover .details-content h4 {
+/* .committee-card:hover .details-content h4 {
     animation: fadeInUp 0.5s ease forwards;
 }
 
@@ -172,7 +172,7 @@
     animation: fadeInUp 0.5s 0.3s ease forwards;
     opacity: 0;
     transform: translateY(20px);
-}
+} */
 
 .details-content {
     text-align: center;
@@ -228,6 +228,12 @@
     font-size: 14px;
     margin: 0;
     font-weight: 600;
+}
+
+.committee-row-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 /* Modal Popup Styles */

@@ -1,6 +1,9 @@
 // --- DYNAMIC PATH WORKAROUND ---
-// This script checks if the current page is in a subfolder (like /tracks/ or /pilot/).
-const isInSubfolder = window.location.pathname.toLowerCase().includes('/tracks/') || window.location.pathname.toLowerCase().includes('/pilot/');
+// This script checks if the current page is in a subfolder (like /tracks/, /pilot/, or /team/).
+const isInSubfolder =
+    window.location.pathname.toLowerCase().includes('/tracks/') ||
+    window.location.pathname.toLowerCase().includes('/pilot/') ||
+    window.location.pathname.toLowerCase().includes('/team/');
 const basePath = isInSubfolder ? '../' : '';
 
 const headerHTML = `
@@ -30,8 +33,8 @@ const headerHTML = `
                 <li class="has-dropdown">
                     <a href="#">OUR TEAM</a>
                     <ul class="dropdown">
-                        <li><a href="${basePath}steering-committee-2025.html">Steering Committee</a></li>
-                        <li><a href="${basePath}advisory-committee-2025.html">Organizing Committee</a></li>
+                        <li><a href="${basePath}team/steering-committee-2026.html">Steering Committee</a></li>
+                        <li><a href="${basePath}team/advisory-committee-2026.html">Organizing Committee</a></li>
                     </ul>
                 </li>
                 <li class="has-dropdown">

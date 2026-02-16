@@ -1,6 +1,9 @@
 // --- DYNAMIC PATH WORKAROUND ---
-// This script checks if the current page is in a subfolder (like /tracks/ or /Pilot/).
-const isInSubfolderFooter = window.location.pathname.toLowerCase().includes('/tracks/') || window.location.pathname.toLowerCase().includes('/pilot/');
+// This script checks if the current page is in a subfolder (like /tracks/, /Pilot/, or /team/).
+const isInSubfolderFooter =
+    window.location.pathname.toLowerCase().includes('/tracks/') ||
+    window.location.pathname.toLowerCase().includes('/pilot/') ||
+    window.location.pathname.toLowerCase().includes('/team/');
 const basePathFooter = isInSubfolderFooter ? '../' : '';
 
 const footerHTML = `
