@@ -34,11 +34,11 @@ const footerHTML = `
         <div class="footer-column">
             <h3>Our Tracks</h3>
             <ul>
-                <li><a href="${basePathFooter}tracks/innovtion_challenge.html">Innovation Challenge</a></li>
-                <li><a href="${basePathFooter}tracks/junior_einstein.html">Junior Einstein</a></li>
-                <li><a href="${basePathFooter}tracks/maker_fair.html">Maker Fair</a></li>
+                <li><a href="${basePathFooter}tracks/innovation-challenge.html">Innovation Challenge</a></li>
+                <li><a href="${basePathFooter}tracks/junior-einstein.html">Junior Einstein</a></li>
+                <li><a href="${basePathFooter}tracks/maker-fair.html">Maker Fair</a></li>
                 <li><a href="${basePathFooter}tracks/wepower.html">WePOWER Track</a></li>
-                <li><a href="${basePathFooter}tracks/special_track.html">Special Track</a></li>
+                <li><a href="${basePathFooter}tracks/special-track.html">Special Track</a></li>
                 <li><a href="${basePathFooter}tracks/iengage.html">IEngage Track</a></li>
             </ul>
         </div>

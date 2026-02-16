@@ -14,13 +14,13 @@ const headerHTML = `
             <ul>
                 <!-- ⭐ FIX: All paths now use the dynamic 'basePath' variable -->
                 <li><a href="${basePath}index.html">HOME</a></li>
-                <li><a href="${basePath}about-us.html">ABOUT US</a></li>
+                <li><a href="${basePath}about-us-1.html">ABOUT US</a></li>
                 <li class="has-dropdown">
                     <a href="#">TRACKS</a>
                     <ul class="dropdown">
-                        <li><a href="${basePath}tracks/innovtion_challenge.html">Innovation Challenge</a></li>
-                        <li><a href="${basePath}tracks/junior_einstein.html">Junior Einstein</a></li>
-                        <li><a href="${basePath}tracks/maker_fair.html">Maker Fair</a></li>
+                        <li><a href="${basePath}tracks/innovation-challenge.html">Innovation Challenge</a></li>
+                        <li><a href="${basePath}tracks/junior-einstein.html">Junior Einstein</a></li>
+                        <li><a href="${basePath}tracks/maker-fair.html">Maker Fair</a></li>
                         <li><a href="${basePath}tracks/wepower.html">WePOWER Special Track</a></li>
                         <li><a href="${basePath}tracks/special_track_junior_einstein.html">Special Track</a></li>
                         <li><a href="${basePath}tracks/iengage.html">IEngage Track</a></li>
@@ -36,8 +36,8 @@ const headerHTML = `
                 <li class="has-dropdown">
                     <a href="#">SPONSORS</a>
                     <ul class="dropdown">
-                        <li><a href="${basePath}sponsors_2025.html">Sponsors 2025</a></li>
-                        <li><a href="${basePath}sponsors_2024.html">Sponsors 2024</a></li>
+                        <li><a href="${basePath}sponsors-2025.html">Sponsors 2025</a></li>
+                        <li><a href="${basePath}sponsors-2024.html">Sponsors 2024</a></li>
                     </ul>
                 </li>
                 <li><a href="${basePath}index.html#juries-speakers">JURY</a></li>

@@ -17,16 +17,16 @@ const headerHTML = `
             <ul>
                 <!-- ⭐ FIX: All paths now use the dynamic 'basePath' variable -->
                 <li><a href="${basePath}index.html">HOME</a></li>
-                <li><a href="${basePath}about-us.html">ABOUT US</a></li>
+                <li><a href="${basePath}about-us-1.html">ABOUT US</a></li>
               
                 <li class="has-dropdown">
                     <a href="#">TRACKS</a>
                     <ul class="dropdown">
-                        <li><a href="${basePath}tracks/innovtion_challenge.html">Innovation Challenge</a></li>
-                        <li><a href="${basePath}tracks/junior_einstein.html">Junior Einstein</a></li>
-                        <li><a href="${basePath}tracks/maker_fair.html">Maker Fair</a></li>
+                        <li><a href="${basePath}tracks/innovation-challenge.html">Innovation Challenge</a></li>
+                        <li><a href="${basePath}tracks/junior-einstein.html">Junior Einstein</a></li>
+                        <li><a href="${basePath}tracks/maker-fair.html">Maker Fair</a></li>
                         <li><a href="${basePath}tracks/wepower.html">WePOWER Track</a></li>
-                        <li><a href="${basePath}tracks/special_track.html">Special Track</a></li>
+                        <li><a href="${basePath}tracks/special-track.html">Special Track</a></li>
                         <li><a href="${basePath}tracks/iengage.html">IEngage Track</a></li>
                     </ul>
                 </li>
@@ -34,38 +34,38 @@ const headerHTML = `
                     <a href="#">OUR TEAM</a>
                     <ul class="dropdown">
                         <li><a href="${basePath}team/steering-committee-2026.html">Steering Committee</a></li>
-                        <li><a href="${basePath}team/advisory-committee-2026.html">Organizing Committee</a></li>
+                       
                     </ul>
                 </li>
                 <li class="has-dropdown">
                     <a href="#">SPONSORS</a>
                     <ul class="dropdown">
-                    <li><a href="${basePath}be_a_sponsor.html">Become a Sponsor</a></li>
-                        <li><a href="${basePath}sponsors_2025.html">Sponsors 2025</a></li>
-                        <li><a href="${basePath}sponsors_2024.html">Sponsors 2024</a></li>
+                    <li><a href="${basePath}become-a-sponsor.html">Become a Sponsor</a></li>
+                        <li><a href="${basePath}sponsors-2025.html">Sponsors 2025</a></li>
+                        <li><a href="${basePath}sponsors-2024.html">Sponsors 2024</a></li>
                         
                     </ul>
                 </li>
                 <li class="has-dropdown">
                     <a href="#">JURY</a>
                     <ul class="dropdown">
-                        <li><a href="${basePath}become_jury.html">Become a Jury</a></li>
+                        <li><a href="${basePath}become-a-jury.html">Become a Jury</a></li>
                     </ul>
                 </li>
                 <li class="has-dropdown">
                     <a href="#">Yesist12 Corner</a>
                     <ul class="dropdown">
-                        <li><a href="${basePath}brand-toolkit.html">Brand Toolkit</a></li>
-                        <li><a href="${basePath}Editions-IEEEYESIST12.html">Editions</a></li>
+                        <li><a href="${basePath}yesist12-brand.html">Brand Toolkit</a></li>
+                        <li><a href="${basePath}editions.html">Editions</a></li>
                     </ul>
                 </li>
                 <li class="has-dropdown">
                     <a href="#">PILOT</a>
                     <ul class="dropdown">
                         <li><a href="https://portal.ieeeyesist12.org/pilot-list" target="_blank" rel="noopener">Pilot 2026</a></li>
-                        <li><a href="${basePath}Pilot/pilot_instructions.html">Pilot Instructions</a></li>
-                        <li><a href="${basePath}Pilot/pilot_awards.html">Pilot Awards</a></li>
-                        <li><a href="${basePath}Pilot/pilot_registration.html">Pilot Registration</a></li>
+                        <li><a href="${basePath}pilot-instructions.html">Pilot Instructions</a></li>
+                        <li><a href="${basePath}pilot-awards.html">Pilot Awards</a></li>
+                        <li><a href="${basePath}pilot-registration.html">Pilot Registration</a></li>
                     </ul>
                 </li>
                 <li><a href="${basePath}finale_2026.html">FINALE 2026</a></li>
